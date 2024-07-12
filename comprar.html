@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos de CSS -->
+    <link rel="stylesheet" href="Css/reset.css">
+    <link rel="stylesheet" href="Css/hamburguesa.css">
+    <link rel="stylesheet" href="Css/style.css">
+    <title>Comprar</title>
+</head>
+
+<body>
+    <input id="toggler" type="checkbox">
+    <nav>
+        <div class="logo">
+            <a href="index.html"> <img src="Img/iconos/logo.png" alt="logo">
+                <p>TiendaGamer</p>
+            </a>
+        </div>
+        <label for="toggler" class="hamb">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <ul id="hamburgerMenu">
+            <li><a href="index.html" class="navigation__link">PRODUCTOS</a></li>
+            <li><a href="cargarProducto.html" class="navigation__link">CARGAR PRODUCTOS</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="section-comprar">
+            <div class="producto-seleccionado">
+                <img id="imagen-producto" src="" alt="">
+                <div class="producto-info">
+                    
+                    <div class="info-producto">
+                        <h3 id="nombre-producto"></h3>
+                        <p id="precio-producto"></p>
+                        <button class="btn-comprar" id="btn-comprar">Comprar ahora</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>TiendaGamer</p>
+        <p>Por Maximiliano Benavides</p>
+        <div class="redes">
+            <img src="Img/iconos/github.png" alt="">
+            <img src="Img/iconos/linkedin.png" alt="">
+        </div>
+        <p>ALURA LATAM 2024</p>
+    </footer>
+
+    <script src="js/comprar.js"></script>
+</body>
+
+</html>

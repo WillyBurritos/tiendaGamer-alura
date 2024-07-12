@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    --fuenteSaira: 'Saira Stencil One', sans-serif;
+    --fuentePoppins: 'Poppins', sans-serif;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* VISTA MOVIL */
+/* INDEX */
+.section-index {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.titulo-productos {
+    font-family: var(--fuentePoppins);
+    margin: 3rem;
+    text-align: center;
+    font-size: 3.5rem;
+}
+
+.no-productos {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: rgb(241 31 31);
+    color: white;
+}
+
+.buscar {
+    font-family: var(--fuentePoppins);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+
+}
+
+.buscar input {
+    border: 1px solid #ccc;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.5rem;
+    border-radius: 1rem;
+
+    &:hover {
+        outline-color: #311de9;
+    }
+}
+
+.contenedor-producto {
+    width: 180px;
+    background-color: transparent;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #313ab8;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.imagen-producto {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+
+}
+
+.nombreProducto {
+    margin-top: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    font-size: 1.2rem;
+}
+
+.precioProducto {
+    margin-top: 2.2rem;
+    font-size: 1.7rem;
+}
+
+
+.precio-iconoDelete img {
+    margin-top: 1rem;
+    width: 3rem;
+    transition: transform 0.4s ease;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.precio-iconoDelete {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* MODAL EDITAR*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15vh auto;
+    padding: 2rem;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content h2 {
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-family: var(--fuentePoppins);
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.label {
+    font-size: 1.5rem;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="number"],
+.modal-content button {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+.modal-content button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+}
+
+.modal-content .btn-cancel {
+    background-color: #dc3545;
+}
+
+.modal-content .btn-cancel:hover {
+    background-color: #c82333;
+}
+
+.modal-content .button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* COMPRAR */
+.btn-comprar {
+    display: block;
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding: 0.7rem 2rem;
+    border-radius: 1rem;
+    background-color: rgb(35, 59, 242);
+    color: white;
+    font-size: 1.7rem;
+    transition: transform 0.4s ease;
+
+    &:hover {
+        transform: scale(0.95);
+        background-color: rgb(5, 24, 171);
+    }
+}
+
+/* CARGAR PRODUCTO */
+.titulo-cargarProducto {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    font-family: var(--fuentePoppins);
+}
+
+.contenedor-productos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+.formCargar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: #f9f9f9;
+}
+
+.formCargar div {
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.formCargar label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.formCargar input[type="text"],
+.formCargar input[type="number"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+}
+
+.formCargar button {
+    width: 45%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #007bff;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+
+.formCargar button:hover {
+    background-color: #0056b3;
+}
+
+.formCargar button[type="reset"] {
+    background-color: #dc3545;
+}
+
+.formCargar button[type="reset"]:hover {
+    background-color: #c82333;
+}
+
+.formCargar .button-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.redes img {
+    width: 30px;
+    transition: transform 0.4s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.redes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* FOOTER */
+footer {
+    font-family: var(--fuentePoppins);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 2rem;
+    background: #5300C8;
+    color: white;
+    margin-top: 5rem;
+}
+
+footer p {
+    margin: 0.5rem 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+/* COMPRAR PRODUCTO */
+.section-comprar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.producto-seleccionado {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.producto-info {
+    display: flex;
+
+    font-size: 1.5rem;
+}
+
+.info-producto p,
+h3 {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+.producto-info img {
+    max-width: 200px;
+    margin-right: 1rem;
+}
+
+.producto-info div {
+    flex: 1;
+    text-align: left;
+}
+
+
+@media (min-width:768px) {
+
+    /* INDEX */
+    .buscar {
+        font-size: 2rem;
+    }
+
+    .buscar input {
+        padding: 0.8rem;
+        width: 20rem;
+        font-size: 1.5rem;
+    }
+
+    .no-productos {
+        font-size: 2.5rem;
+        padding: 1.5rem;
+    }
+
+    .contenedor-producto {
+        width: 320px;
+        padding: 1.5rem;
+    }
+
+    .imagen-producto {
+        height: 320px;
+    }
+
+    .nombreProducto {
+        font-size: 2rem;
+    }
+
+    .precioProducto {
+        font-size: 2rem;
+    }
+
+    /* CARGAR PRODUCTO */
+    .formCargar {
+        font-family: var(--fuentePoppins);
+        width: 1000px;
+        font-size: 1.7rem;
+        background-color: #d2aed2;
+    }
+
+    .titulo-cargarProducto {
+        font-size: 3.5rem;
+    }
+
+    /* MODAL EDITAR */
+    .modal-content h2 {
+        font-size: 3rem;
+    }
+
+    /* VISTA DESKTOP */
+    @media (min-width:1024px) {
+        .titulo-productos {
+            font-size: 5rem;
+        }
+
+        .buscar {
+            font-size: 2.5rem;
+        }
+
+        .buscar input {
+            width: 40rem;
+            padding: 1.5rem;
+            font-size: 1.8rem;
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .formCargar {
+        font-family: var(--fuentePoppins);
+        width: 1000px;
+        font-size: 1.7rem;
+        background-color: #d2aed2;
+    }
+}

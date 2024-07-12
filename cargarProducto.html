@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/reset.css">
+    <link rel="stylesheet" href="Css/hamburguesa.css">
+    <link rel="stylesheet" href="Css/style.css">
+    <title>Cargar Producto</title>
+</head>
+
+<body>
+    <input id="toggler" type="checkbox">
+    <nav>
+        <div class="logo">
+            <a href="index.html"> <img src="Img/iconos/logo.png" alt="logo">
+                <p>TiendaGamer</p>
+            </a>
+        </div>
+        <label for="toggler" class="hamb">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <ul id="hamburgerMenu">
+            <li><a href="index.html" class="navigation__link">PRODUCTOS</a></li>
+            <li><a href="cargarProducto.html" class="navigation__link">CARGAR PRODUCTOS</a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <h1 class="titulo-cargarProducto">CARGAR UN NUEVO PRODUCTO</h1>
+        <section class="contenedor-productos">
+            <form class="formCargar" id="formCargarProducto">
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre del producto" required>
+                </div>
+
+                <div>
+                    <label for="precio">Precio</label>
+                    <input type="number" name="precio" id="precio" placeholder="Precio del producto" required>
+                </div>
+
+                <div>
+                    <label for="imagen">Imagen</label>
+                    <input type="text" name="imagen" id="imagen" placeholder="Ingresa la URL de la imagen" required>
+                </div>
+                
+                <div class="button-group">
+                    <button type="submit">Cargar</button>
+                    <button type="reset">Limpiar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    
+    <!-- FOOTER -->
+    <footer>
+        <p>TiendaGamer</p>
+        <p>Por Maximiliano Benavides</p>
+        <p>ALURA LATAM 2024</p>
+        <div class="redes">
+            <img src="Img/iconos/github.png" alt="">
+            <img src="Img/iconos/linkedin.png" alt="">
+        </div>
+    </footer>
+
+    <script src="js/cargarProducto.js"></script>
+</body>
+
+</html>
